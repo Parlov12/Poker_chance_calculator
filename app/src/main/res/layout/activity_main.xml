@@ -107,10 +107,10 @@
     -->
         <LinearLayout
             android:id="@+id/linear_vanjski_sloj"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:weightSum="1"
+            android:weightSum="3"
             app:layout_constraintBottom_toBottomOf="@+id/scroll_view"
             app:layout_constraintEnd_toEndOf="@+id/scroll_view"
             app:layout_constraintStart_toStartOf="@+id/scroll_view"
@@ -118,10 +118,12 @@
 
             <LinearLayout
                 android:id="@+id/linear_first_row"
-                android:layout_width="410dp"
+                android:layout_width="match_parent"
                 android:layout_height="194dp"
                 android:layout_marginTop="32dp"
+                android:layout_weight="1"
                 android:gravity="center_horizontal"
+                android:weightSum="2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -129,13 +131,13 @@
 
                 <LinearLayout
                     android:id="@+id/linear_player1"
-                    android:layout_width="159dp"
+                    android:layout_width="0dp"
                     android:layout_height="180dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/okvir"
                     android:orientation="vertical"
-                    android:weightSum="1"
                     tools:layout_editor_absoluteX="50dp"
                     tools:layout_editor_absoluteY="338dp">
 
@@ -153,11 +155,12 @@
 
                     <LinearLayout
                         android:id="@+id/linear_player1_2"
-                        android:layout_width="144dp"
+                        android:layout_width="match_parent"
                         android:layout_height="103dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
                         <ImageView
                             android:id="@+id/player2_card1"
@@ -185,7 +188,8 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
                         <TextView
                             android:id="@+id/win_stats2"
@@ -222,13 +226,13 @@
 
                 <LinearLayout
                     android:id="@+id/linear_player2"
-                    android:layout_width="159dp"
+                    android:layout_width="0dp"
                     android:layout_height="180dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/okvir"
                     android:orientation="vertical"
-                    android:weightSum="1"
                     tools:layout_editor_absoluteX="240dp"
                     tools:layout_editor_absoluteY="305dp">
 
@@ -246,11 +250,12 @@
 
                     <LinearLayout
                         android:id="@+id/player2_2"
-                        android:layout_width="144dp"
+                        android:layout_width="match_parent"
                         android:layout_height="103dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
                         <ImageView
                             android:id="@+id/player1_card1"
@@ -278,7 +283,8 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
                         <TextView
                             android:id="@+id/win_stats1"
@@ -317,10 +323,12 @@
 
             <LinearLayout
                 android:id="@+id/linear_second_row"
-                android:layout_width="410dp"
+                android:layout_width="match_parent"
                 android:layout_height="194dp"
                 android:layout_marginTop="32dp"
+                android:layout_weight="1"
                 android:gravity="center_horizontal"
+                android:weightSum="2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -328,13 +336,13 @@
 
                 <LinearLayout
                     android:id="@+id/linear_player3"
-                    android:layout_width="159dp"
+                    android:layout_width="0dp"
                     android:layout_height="180dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/okvir"
                     android:orientation="vertical"
-                    android:weightSum="1"
                     tools:layout_editor_absoluteX="50dp"
                     tools:layout_editor_absoluteY="338dp">
 
@@ -352,11 +360,12 @@
 
                     <LinearLayout
                         android:id="@+id/linear_player2_1"
-                        android:layout_width="144dp"
+                        android:layout_width="match_parent"
                         android:layout_height="103dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
                         <ImageView
                             android:id="@+id/player3_card1"
@@ -384,7 +393,8 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
                         <TextView
                             android:id="@+id/win_stats3"
@@ -421,13 +431,13 @@
 
                 <LinearLayout
                     android:id="@+id/linear_player4"
-                    android:layout_width="159dp"
+                    android:layout_width="0dp"
                     android:layout_height="180dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/okvir"
                     android:orientation="vertical"
-                    android:weightSum="1"
                     tools:layout_editor_absoluteX="240dp"
                     tools:layout_editor_absoluteY="305dp">
 
@@ -445,11 +455,12 @@
 
                     <LinearLayout
                         android:id="@+id/player4_2"
-                        android:layout_width="144dp"
+                        android:layout_width="match_parent"
                         android:layout_height="103dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
                         <ImageView
                             android:id="@+id/player4_card1"
@@ -477,7 +488,8 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
                         <TextView
                             android:id="@+id/win_stats4"
@@ -516,10 +528,12 @@
 
             <LinearLayout
                 android:id="@+id/linear_third_row"
-                android:layout_width="410dp"
+                android:layout_width="match_parent"
                 android:layout_height="194dp"
                 android:layout_marginTop="32dp"
+                android:layout_weight="1"
                 android:gravity="center_horizontal"
+                android:weightSum="2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -527,13 +541,13 @@
 
                 <LinearLayout
                     android:id="@+id/linear_player5"
-                    android:layout_width="159dp"
+                    android:layout_width="0dp"
                     android:layout_height="180dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/okvir"
                     android:orientation="vertical"
-                    android:weightSum="1"
                     tools:layout_editor_absoluteX="50dp"
                     tools:layout_editor_absoluteY="338dp">
 
@@ -544,18 +558,19 @@
                         android:elegantTextHeight="true"
                         android:fontFamily="@font/bangers"
                         android:gravity="center"
-                        android:text="PLAYER 3"
+                        android:text="PLAYER 4"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textSize="24sp" />
 
                     <LinearLayout
                         android:id="@+id/linear_player5_1"
-                        android:layout_width="144dp"
+                        android:layout_width="match_parent"
                         android:layout_height="103dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
                         <ImageView
                             android:id="@+id/player5_card1"
@@ -583,7 +598,8 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
                         <TextView
                             android:id="@+id/win_stats5"
@@ -620,13 +636,13 @@
 
                 <LinearLayout
                     android:id="@+id/linear_player6"
-                    android:layout_width="159dp"
+                    android:layout_width="0dp"
                     android:layout_height="180dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
                     android:background="@drawable/okvir"
                     android:orientation="vertical"
-                    android:weightSum="1"
                     tools:layout_editor_absoluteX="240dp"
                     tools:layout_editor_absoluteY="305dp">
 
@@ -637,18 +653,19 @@
                         android:elegantTextHeight="true"
                         android:fontFamily="@font/bangers"
                         android:gravity="center"
-                        android:text="PLAYER 4"
+                        android:text="PLAYER 6"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textSize="24sp" />
 
                     <LinearLayout
                         android:id="@+id/player6_2"
-                        android:layout_width="144dp"
+                        android:layout_width="match_parent"
                         android:layout_height="103dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
                         <ImageView
                             android:id="@+id/player6_card1"
@@ -676,7 +693,8 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
                         <TextView
                             android:id="@+id/win_stats6"
