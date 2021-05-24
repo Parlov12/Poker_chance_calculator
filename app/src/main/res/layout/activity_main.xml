@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1_1"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/stol"
+        android:layout_width="0dp"
+        android:layout_height="210dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/stol"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/naslov" />
+
+    <TextView
+        android:id="@+id/naslov"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bangers"
+        android:text="POKER CHANCE CALCULATOR"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/table_cards"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/stol"
+        app:layout_constraintEnd_toEndOf="@+id/stol"
+        app:layout_constraintStart_toStartOf="@+id/stol"
+        app:layout_constraintTop_toTopOf="@+id/stol">
+
+        <ImageView
+            android:id="@+id/table_card1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/backside" />
+
+        <ImageView
+            android:id="@+id/table_card2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/backside" />
+
+        <ImageView
+            android:id="@+id/table_card3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/backside" />
+
+        <ImageView
+            android:id="@+id/table_card4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/backside" />
+
+        <ImageView
+            android:id="@+id/table_card5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/backside" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stol">
+
+        <!--
+        Početak vanjskog sloja!
+    -->
+        <LinearLayout
+            android:id="@+id/linear_vanjski_sloj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1"
+            app:layout_constraintBottom_toBottomOf="@+id/scroll_view"
+            app:layout_constraintEnd_toEndOf="@+id/scroll_view"
+            app:layout_constraintStart_toStartOf="@+id/scroll_view"
+            app:layout_constraintTop_toTopOf="@+id/scroll_view">
+
+            <LinearLayout
+                android:id="@+id/linear_first_row"
+                android:layout_width="410dp"
+                android:layout_height="194dp"
+                android:layout_marginTop="32dp"
+                android:gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stol">
+
+                <LinearLayout
+                    android:id="@+id/linear_player1"
+                    android:layout_width="159dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/okvir"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    tools:layout_editor_absoluteX="50dp"
+                    tools:layout_editor_absoluteY="338dp">
+
+                    <TextView
+                        android:id="@+id/player1_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/bangers"
+                        android:gravity="center"
+                        android:text="PLAYER 1"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:id="@+id/linear_player1_2"
+                        android:layout_width="144dp"
+                        android:layout_height="103dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/player2_card1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+
+                        <ImageView
+                            android:id="@+id/player2_card2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear2_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/win_stats2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="WIN\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/draw_stats2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="TIE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/lose_stats2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="LOSE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_player2"
+                    android:layout_width="159dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/okvir"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    tools:layout_editor_absoluteX="240dp"
+                    tools:layout_editor_absoluteY="305dp">
+
+                    <TextView
+                        android:id="@+id/player2_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/bangers"
+                        android:gravity="center"
+                        android:text="PLAYER 2"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:id="@+id/player2_2"
+                        android:layout_width="144dp"
+                        android:layout_height="103dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/player1_card1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+
+                        <ImageView
+                            android:id="@+id/player1_card2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear1_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/win_stats1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="WIN\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/draw_stats1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="TIE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/lose_stats1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="LOSE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_second_row"
+                android:layout_width="410dp"
+                android:layout_height="194dp"
+                android:layout_marginTop="32dp"
+                android:gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stol">
+
+                <LinearLayout
+                    android:id="@+id/linear_player3"
+                    android:layout_width="159dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/okvir"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    tools:layout_editor_absoluteX="50dp"
+                    tools:layout_editor_absoluteY="338dp">
+
+                    <TextView
+                        android:id="@+id/player3_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/bangers"
+                        android:gravity="center"
+                        android:text="PLAYER 3"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:id="@+id/linear_player2_1"
+                        android:layout_width="144dp"
+                        android:layout_height="103dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/player3_card1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+
+                        <ImageView
+                            android:id="@+id/player3_card2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear3_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/win_stats3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="WIN\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/draw_stats3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="TIE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/lose_stats3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="LOSE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_player4"
+                    android:layout_width="159dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/okvir"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    tools:layout_editor_absoluteX="240dp"
+                    tools:layout_editor_absoluteY="305dp">
+
+                    <TextView
+                        android:id="@+id/player4_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/bangers"
+                        android:gravity="center"
+                        android:text="PLAYER 4"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:id="@+id/player4_2"
+                        android:layout_width="144dp"
+                        android:layout_height="103dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/player4_card1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+
+                        <ImageView
+                            android:id="@+id/player4_card2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear4_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/win_stats4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="WIN\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/draw_stats4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="TIE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/lose_stats4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="LOSE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_third_row"
+                android:layout_width="410dp"
+                android:layout_height="194dp"
+                android:layout_marginTop="32dp"
+                android:gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stol">
+
+                <LinearLayout
+                    android:id="@+id/linear_player5"
+                    android:layout_width="159dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/okvir"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    tools:layout_editor_absoluteX="50dp"
+                    tools:layout_editor_absoluteY="338dp">
+
+                    <TextView
+                        android:id="@+id/player5_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/bangers"
+                        android:gravity="center"
+                        android:text="PLAYER 3"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:id="@+id/linear_player5_1"
+                        android:layout_width="144dp"
+                        android:layout_height="103dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/player5_card1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+
+                        <ImageView
+                            android:id="@+id/player5_card2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear5_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/win_stats5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="WIN\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/draw_stats5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="TIE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/lose_stats5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="LOSE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_player6"
+                    android:layout_width="159dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/okvir"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    tools:layout_editor_absoluteX="240dp"
+                    tools:layout_editor_absoluteY="305dp">
+
+                    <TextView
+                        android:id="@+id/player6_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/bangers"
+                        android:gravity="center"
+                        android:text="PLAYER 4"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:id="@+id/player6_2"
+                        android:layout_width="144dp"
+                        android:layout_height="103dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/player6_card1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+
+                        <ImageView
+                            android:id="@+id/player6_card2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear6_stats"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/win_stats6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="WIN\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/draw_stats6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="TIE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/lose_stats6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="LOSE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--
+        Kraj vanjskog sloja!
+        -->
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
