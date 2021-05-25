@@ -36,12 +36,11 @@
     <LinearLayout
         android:id="@+id/table_cards"
         android:layout_width="0dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:orientation="horizontal"
+        android:weightSum="5"
         app:layout_constraintBottom_toBottomOf="@+id/stol"
         app:layout_constraintEnd_toEndOf="@+id/stol"
         app:layout_constraintStart_toStartOf="@+id/stol"
@@ -53,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:background="@drawable/backside" />
+            android:src="@drawable/backside" />
 
         <ImageView
             android:id="@+id/table_card2"
@@ -62,7 +61,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:background="@drawable/backside" />
+            android:src="@drawable/backside" />
 
         <ImageView
             android:id="@+id/table_card3"
@@ -71,7 +70,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:background="@drawable/backside" />
+            android:src="@drawable/backside" />
 
         <ImageView
             android:id="@+id/table_card4"
@@ -80,7 +79,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:background="@drawable/backside" />
+            android:src="@drawable/backside" />
 
         <ImageView
             android:id="@+id/table_card5"
@@ -88,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_weight="1"
-            android:background="@drawable/backside" />
+            android:src="@drawable/backside" />
 
     </LinearLayout>
 
@@ -739,6 +738,56 @@
     </ScrollView>
 
 
+<!-- LinearLayout koji se ponasa kao dialoski okvir -->
+    <LinearLayout
+        android:id="@+id/dialog_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="100dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/card_type"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/spades"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/spades"/>
+
+            <ImageView
+                android:id="@+id/hearts"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/hearts"/>
+
+            <ImageView
+                android:id="@+id/clubs"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/clubs"/>
+
+            <ImageView
+                android:id="@+id/diamonds"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/diamonds"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 
