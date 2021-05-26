@@ -153,7 +153,7 @@
                         android:textSize="24sp" />
 
                     <LinearLayout
-                        android:id="@+id/linear_player1_2"
+                        android:id="@+id/player1_card_holder"
                         android:layout_width="match_parent"
                         android:layout_height="103dp"
                         android:layout_marginStart="10dp"
@@ -162,7 +162,7 @@
                         android:weightSum="2">
 
                         <ImageView
-                            android:id="@+id/player2_card1"
+                            android:id="@+id/player1_card1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="7dp"
@@ -171,17 +171,18 @@
                             android:src="@drawable/backside" />
 
                         <ImageView
-                            android:id="@+id/player2_card2"
+                            android:id="@+id/player1_card2"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="7dp"
                             android:layout_marginEnd="7dp"
                             android:layout_weight="1"
                             android:src="@drawable/backside" />
+
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/linear2_stats"
+                        android:id="@+id/player1_stats_holder"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
@@ -248,7 +249,7 @@
                         android:textSize="24sp" />
 
                     <LinearLayout
-                        android:id="@+id/player2_2"
+                        android:id="@+id/player2_card_holder"
                         android:layout_width="match_parent"
                         android:layout_height="103dp"
                         android:layout_marginStart="10dp"
@@ -257,7 +258,7 @@
                         android:weightSum="2">
 
                         <ImageView
-                            android:id="@+id/player1_card1"
+                            android:id="@+id/player2_card1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="7dp"
@@ -266,13 +267,14 @@
                             android:src="@drawable/backside" />
 
                         <ImageView
-                            android:id="@+id/player1_card2"
+                            android:id="@+id/player2_card2"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="7dp"
                             android:layout_marginEnd="7dp"
                             android:layout_weight="1"
                             android:src="@drawable/backside" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -358,7 +360,7 @@
                         android:textSize="24sp" />
 
                     <LinearLayout
-                        android:id="@+id/linear_player2_1"
+                        android:id="@+id/player3_card_holder"
                         android:layout_width="match_parent"
                         android:layout_height="103dp"
                         android:layout_marginStart="10dp"
@@ -386,7 +388,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/linear3_stats"
+                        android:id="@+id/player3_stats_holder"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
@@ -453,7 +455,7 @@
                         android:textSize="24sp" />
 
                     <LinearLayout
-                        android:id="@+id/player4_2"
+                        android:id="@+id/player4_card_holder"
                         android:layout_width="match_parent"
                         android:layout_height="103dp"
                         android:layout_marginStart="10dp"
@@ -481,7 +483,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/linear4_stats"
+                        android:id="@+id/player4_stats_holder"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
@@ -557,13 +559,13 @@
                         android:elegantTextHeight="true"
                         android:fontFamily="@font/bangers"
                         android:gravity="center"
-                        android:text="PLAYER 4"
+                        android:text="PLAYER 5"
                         android:textAlignment="center"
                         android:textColor="#ffffff"
                         android:textSize="24sp" />
 
                     <LinearLayout
-                        android:id="@+id/linear_player5_1"
+                        android:id="@+id/player5_card_holder"
                         android:layout_width="match_parent"
                         android:layout_height="103dp"
                         android:layout_marginStart="10dp"
@@ -591,7 +593,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/linear5_stats"
+                        android:id="@+id/player5_stats_holder"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
@@ -658,7 +660,7 @@
                         android:textSize="24sp" />
 
                     <LinearLayout
-                        android:id="@+id/player6_2"
+                        android:id="@+id/player6_card_holder"
                         android:layout_width="match_parent"
                         android:layout_height="103dp"
                         android:layout_marginStart="10dp"
@@ -686,7 +688,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/linear6_stats"
+                        android:id="@+id/player6_stats_holder"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="10dp"
@@ -730,6 +732,322 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/linear_forth_row"
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                android:layout_marginTop="32dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:weightSum="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stol">
+
+                <LinearLayout
+                    android:id="@+id/linear_player7"
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/okvir"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="50dp"
+                    tools:layout_editor_absoluteY="338dp">
+
+                    <TextView
+                        android:id="@+id/player7_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/bangers"
+                        android:gravity="center"
+                        android:text="PLAYER 7"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:id="@+id/player7_card_holder"
+                        android:layout_width="match_parent"
+                        android:layout_height="103dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <ImageView
+                            android:id="@+id/player7_card1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+
+                        <ImageView
+                            android:id="@+id/player7_card2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/player7_stats_holder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/win_stats7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="WIN\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/draw_stats7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="TIE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/lose_stats7"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="LOSE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linear_player8"
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/okvir"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="240dp"
+                    tools:layout_editor_absoluteY="305dp">
+
+                    <TextView
+                        android:id="@+id/player8_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/bangers"
+                        android:gravity="center"
+                        android:text="PLAYER 8"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:id="@+id/player8_card_holder"
+                        android:layout_width="match_parent"
+                        android:layout_height="103dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <ImageView
+                            android:id="@+id/player8_card1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+
+                        <ImageView
+                            android:id="@+id/player8_card2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/player8_stats_holder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/win_stats8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="WIN\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/draw_stats8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="TIE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/lose_stats8"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="LOSE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_fifth_row"
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                android:layout_marginTop="32dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:weightSum="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stol">
+
+                <LinearLayout
+                    android:id="@+id/linear_player9"
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/okvir"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="50dp"
+                    tools:layout_editor_absoluteY="338dp">
+
+                    <TextView
+                        android:id="@+id/player9_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/bangers"
+                        android:gravity="center"
+                        android:text="PLAYER 9"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff"
+                        android:textSize="24sp" />
+
+                    <LinearLayout
+                        android:id="@+id/player9_card_holder"
+                        android:layout_width="match_parent"
+                        android:layout_height="103dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <ImageView
+                            android:id="@+id/player9_card1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+
+                        <ImageView
+                            android:id="@+id/player9_card2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/backside" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/player9_stats_holder"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/win_stats9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="WIN\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/draw_stats9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="TIE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/lose_stats9"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="LOSE\n00,00%"
+                            android:textColor="#FFFFFF"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
             <!--
         Kraj vanjskog sloja!
         -->
@@ -742,25 +1060,26 @@
     <LinearLayout
         android:id="@+id/dialog_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="400dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="100dp"
+        android:background="#F2292727"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="#83000000">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/card_type"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:orientation="horizontal"
             android:weightSum="1">
 
@@ -768,6 +1087,8 @@
                 android:id="@+id/spades"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="0.25"
                 android:background="@drawable/spades" />
 
@@ -775,6 +1096,8 @@
                 android:id="@+id/hearts"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="0.25"
                 android:background="@drawable/hearts" />
 
@@ -782,6 +1105,8 @@
                 android:id="@+id/clubs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="0.25"
                 android:background="@drawable/clubs" />
 
@@ -789,6 +1114,8 @@
                 android:id="@+id/diamonds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="0.25"
                 android:background="@drawable/diamonds" />
 
@@ -797,13 +1124,168 @@
         <LinearLayout
             android:id="@+id/cards_first_row"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/karta_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside" />
+
+            <ImageView
+                android:id="@+id/karta_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside" />
+
+            <ImageView
+                android:id="@+id/karta_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside" />
+
+            <ImageView
+                android:id="@+id/karta_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside" />
+
+            <ImageView
+                android:id="@+id/karta_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cards_second_row"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/karta_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside" />
+
+            <ImageView
+                android:id="@+id/karta_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside" />
+
+            <ImageView
+                android:id="@+id/karta_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside" />
+
+            <ImageView
+                android:id="@+id/karta_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside" />
+
+            <ImageView
+                android:id="@+id/karta_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cards_third_row"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:id="@+id/null1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/karta_11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside" />
+
+            <ImageView
+                android:id="@+id/karta_12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside" />
+
+            <ImageView
+                android:id="@+id/karta_13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside" />
+
+            <ImageView
+                android:id="@+id/null2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="0.20"
+                android:src="@drawable/backside"
+                android:visibility="invisible" />
 
         </LinearLayout>
 
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

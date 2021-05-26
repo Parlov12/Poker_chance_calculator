@@ -2,9 +2,9 @@ package com.example.pokerchancecalculator.Karte;
 
 public class Card_model {
 
-    String type;
-    int number;
-    int pic;
+    public String type;
+    public int number;
+    public int pic;
 
     public Card_model()
     {
