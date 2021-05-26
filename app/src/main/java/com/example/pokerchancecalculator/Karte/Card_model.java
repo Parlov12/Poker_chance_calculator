@@ -20,5 +20,6 @@ public class Card_model {
         pic = slika;
     }
 
+
 }
 
