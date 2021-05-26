@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pokerchancecalculator.Karte.Card_model;
 import com.example.pokerchancecalculator.Karte.Cards;
@@ -121,6 +122,43 @@ public class MainActivity extends AppCompatActivity {
         TextView draw9 = findViewById(R.id.draw_stats9);
         TextView lose9 = findViewById(R.id.lose_stats9);
 
+        //LIST KARATA SVIH MOGUCIH IGRACA(MAX 9)
+        List<ImageView> playerCards = new ArrayList<ImageView>();
+        playerCards.add(p1_c1);
+        playerCards.add(p1_c2);
+        playerCards.add(p2_c1);
+        playerCards.add(p2_c2);
+        playerCards.add(p3_c1);
+        playerCards.add(p3_c2);
+        playerCards.add(p4_c1);
+        playerCards.add(p4_c2);
+        playerCards.add(p5_c1);
+        playerCards.add(p5_c2);
+        playerCards.add(p6_c1);
+        playerCards.add(p6_c2);
+        playerCards.add(p7_c1);
+        playerCards.add(p7_c2);
+        playerCards.add(p8_c1);
+        playerCards.add(p8_c2);
+        playerCards.add(p9_c1);
+        playerCards.add(p9_c2);
+
+        // KARTE NA STOLU
+        ImageView t1 = findViewById(R.id.table_card1);
+        ImageView t2 = findViewById(R.id.table_card2);
+        ImageView t3 = findViewById(R.id.table_card3);
+        ImageView t4 = findViewById(R.id.table_card4);
+        ImageView t5 = findViewById(R.id.table_card5);
+
+        List<ImageView> tableCards = new ArrayList<ImageView>();
+        tableCards.add(t1);
+        tableCards.add(t2);
+        tableCards.add(t3);
+        tableCards.add(t4);
+        tableCards.add(t5);
+
+
+
         // KARTE KOJE ODABEREMO KAD SE OTVORI DIJALOSKI OVKIR
         ImageView k1 = findViewById(R.id.karta_1);
         ImageView k2 = findViewById(R.id.karta_2);
@@ -151,35 +189,17 @@ public class MainActivity extends AppCompatActivity {
         dialogCards.add(k12);
         dialogCards.add(k13);
 
-        List<ImageView> playerCards = new ArrayList<ImageView>();
-        playerCards.add(p1_c1);
-        playerCards.add(p1_c2);
-        playerCards.add(p2_c1);
-        playerCards.add(p2_c2);
-        playerCards.add(p3_c1);
-        playerCards.add(p3_c2);
-        playerCards.add(p4_c1);
-        playerCards.add(p4_c2);
-        playerCards.add(p5_c1);
-        playerCards.add(p5_c2);
-        playerCards.add(p6_c1);
-        playerCards.add(p6_c2);
-        playerCards.add(p7_c1);
-        playerCards.add(p7_c2);
-        playerCards.add(p8_c1);
-        playerCards.add(p8_c2);
-        playerCards.add(p9_c1);
-        playerCards.add(p9_c2);
 
-
-
+        // postavljanje karata u dijaloskom okviru na sve pik karte
         setSpades(dialogCards);
 
+        // ImageView vrsta karata u dijaloskom okviru
         ImageView spades = findViewById(R.id.spades);
         ImageView hearts = findViewById(R.id.hearts);
         ImageView clubs = findViewById(R.id.clubs);
         ImageView diamonds = findViewById(R.id.diamonds);
 
+        // postavljanje na default - pik karte
         spades.setForeground(foreground);
 
 
@@ -228,25 +248,232 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        for(i = 0; i < playerCards.size()-1; i++)
-        {
-            playerCards.get(i).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    openDialog(i, dialog_cards_view, playerCards.get(i));
-                }
-            });
-        }
 
-        for(i = 0; i < dialogCards.size()-1; i++)
-        {
-            dialogCards.get(i).setOnClickListener(new View.OnClickListener() {
+            playerCards.get(0).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    closeDialog(dialog_cards_view, dialogCards.get(i), playerCards);
+                    openDialog(0, dialog_cards_view, playerCards.get(0));
                 }
             });
-        }
+        playerCards.get(1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(1, dialog_cards_view, playerCards.get(1));
+            }
+        });
+        playerCards.get(2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(2, dialog_cards_view, playerCards.get(2));
+            }
+        });
+        playerCards.get(3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(3, dialog_cards_view, playerCards.get(3));
+            }
+        });
+        playerCards.get(4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(4, dialog_cards_view, playerCards.get(4));
+            }
+        });
+        playerCards.get(5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(5, dialog_cards_view, playerCards.get(5));
+            }
+        });
+        playerCards.get(6).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(6, dialog_cards_view, playerCards.get(6));
+            }
+        });
+        playerCards.get(7).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(7, dialog_cards_view, playerCards.get(7));
+            }
+        });
+        playerCards.get(8).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(8, dialog_cards_view, playerCards.get(8));
+            }
+        });
+        playerCards.get(9).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(9, dialog_cards_view, playerCards.get(9));
+            }
+        });
+        playerCards.get(10).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(10, dialog_cards_view, playerCards.get(10));
+            }
+        });
+        playerCards.get(11).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(11, dialog_cards_view, playerCards.get(11));
+            }
+        });
+        playerCards.get(12).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(12, dialog_cards_view, playerCards.get(12));
+            }
+        });
+        playerCards.get(13).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(13, dialog_cards_view, playerCards.get(13));
+            }
+        });
+        playerCards.get(14).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(14, dialog_cards_view, playerCards.get(14));
+            }
+        });
+        playerCards.get(15).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(15, dialog_cards_view, playerCards.get(15));
+            }
+        });
+        playerCards.get(16).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(16, dialog_cards_view, playerCards.get(16));
+            }
+        });
+        playerCards.get(17).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(17, dialog_cards_view, playerCards.get(17));
+            }
+        });
+
+
+
+
+
+            dialogCards.get(0).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    closeDialog(dialog_cards_view, dialogCards.get(0), playerCards, tableCards);
+                }
+            });
+        dialogCards.get(1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeDialog(dialog_cards_view, dialogCards.get(1), playerCards, tableCards);
+            }
+        });
+        dialogCards.get(2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeDialog(dialog_cards_view, dialogCards.get(2), playerCards, tableCards);
+            }
+        });
+        dialogCards.get(3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeDialog(dialog_cards_view, dialogCards.get(3), playerCards, tableCards);
+            }
+        });
+        dialogCards.get(4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeDialog(dialog_cards_view, dialogCards.get(4), playerCards, tableCards);
+            }
+        });
+        dialogCards.get(5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeDialog(dialog_cards_view, dialogCards.get(5), playerCards, tableCards);
+            }
+        });
+        dialogCards.get(6).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeDialog(dialog_cards_view, dialogCards.get(6), playerCards, tableCards);
+            }
+        });
+        dialogCards.get(7).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeDialog(dialog_cards_view, dialogCards.get(7), playerCards, tableCards);
+            }
+        });
+        dialogCards.get(8).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeDialog(dialog_cards_view, dialogCards.get(8), playerCards, tableCards);
+            }
+        });
+        dialogCards.get(9).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeDialog(dialog_cards_view, dialogCards.get(9), playerCards, tableCards);
+            }
+        });
+        dialogCards.get(10).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeDialog(dialog_cards_view, dialogCards.get(10), playerCards, tableCards);
+            }
+        });
+        dialogCards.get(11).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeDialog(dialog_cards_view, dialogCards.get(11), playerCards, tableCards);
+            }
+        });
+        dialogCards.get(12).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeDialog(dialog_cards_view, dialogCards.get(12), playerCards, tableCards);
+            }
+        });
+
+        tableCards.get(0).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(18, dialog_cards_view, tableCards.get(0));
+            }
+        });
+        tableCards.get(1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(19, dialog_cards_view, tableCards.get(1));
+            }
+        });
+        tableCards.get(2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(20, dialog_cards_view, tableCards.get(2));
+            }
+        });
+        tableCards.get(3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(21, dialog_cards_view, tableCards.get(3));
+            }
+        });
+        tableCards.get(4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog(22, dialog_cards_view, tableCards.get(4));
+            }
+        });
+
+
+
 
     }
 
@@ -258,13 +485,24 @@ public class MainActivity extends AppCompatActivity {
         currentImageView = l;
     }
 
-    public void closeDialog(LinearLayout dialog, ImageView m, List<ImageView> lista)
+    public void closeDialog(LinearLayout dialog, ImageView m, List<ImageView> lista, List<ImageView> lista2)
     {
         System.out.println("Dialog closed!");
         dialog.setVisibility(View.INVISIBLE);
         draw = m.getDrawable();
-        lista.get(currentImageView).setImageDrawable(draw);
-
+        if((currentImageView>=18)&&(currentImageView<=22))
+        {
+            lista2.get(currentImageView-18).setImageDrawable(draw);
+        }
+        else if((currentImageView>=0)&&(currentImageView<=17)) {
+            lista.get(currentImageView).setImageDrawable(draw);
+        }
+        else
+        {
+            Toast toast;
+            toast = Toast.makeText(getApplicationContext(), "closeDialog ERROR!\ncurrentImageView out of range!", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
 
