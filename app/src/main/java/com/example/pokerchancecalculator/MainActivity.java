@@ -212,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
         spades.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vrsta = 0;
                 setSpades(dialogCards);
                 spades.setForeground(foreground);
                 hearts.setForeground(foreground_null);
@@ -223,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
         hearts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vrsta = 1;
                 setHearts(dialogCards);
                 spades.setForeground(foreground_null);
                 hearts.setForeground(foreground);
@@ -234,6 +236,7 @@ public class MainActivity extends AppCompatActivity {
         clubs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vrsta = 2;
                 setClubs(dialogCards);
                 spades.setForeground(foreground_null);
                 hearts.setForeground(foreground_null);
@@ -245,6 +248,7 @@ public class MainActivity extends AppCompatActivity {
         diamonds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                vrsta = 3;
                 setDiamonds(dialogCards);
                 spades.setForeground(foreground_null);
                 hearts.setForeground(foreground_null);

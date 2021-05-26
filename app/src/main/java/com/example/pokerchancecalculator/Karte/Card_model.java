@@ -20,6 +20,13 @@ public class Card_model {
         pic = slika;
     }
 
+    public void setCard(Card_model c)
+    {
+        type = c.type;
+        number = c.number;
+        pic = c.pic;
+    }
+
 
 }
 
