@@ -1,11 +1,17 @@
 package com.example.pokerchancecalculator.Algoritam;
 
+import android.content.Context;
+import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
-public class Console
+public class TestConsole
 {
-	public static void main(String[] args) throws Exception
-	{
+	public static void test(String[] args, TextView c) throws Exception {
+		Log.d("TAG","Test started");
+
 		boolean isBoard = false;
 		String board = "";
 		ArrayList<String> handsStr = new ArrayList<>();
@@ -72,7 +78,8 @@ public class Console
 
 			String preprend = calculator.boardIsEmpty() ? "~" : "";
 
-			System.out.println(String.format("Player %d: %s - %s --- %s%s", 1+i, hands.get(i), hr, preprend, he));
+			System.out.println(String.format("Player %d: %s - %s --- %s%s\n", 1+i, hands.get(i), hr, preprend, he));
+			c.append(String.format("Player %d: %s - %s --- %s%s", 1+i, hands.get(i), hr, preprend, he));
 		}
 
 
@@ -82,6 +89,13 @@ public class Console
 			System.out.println("");
 			//getMaxIterations() racuna koliko smo simulacija proveli, elapsedSeconds je vrijeme racunanje simulacija i postotaka
 			System.out.println(String.format("Simulated %d random boards in %.1f seconds", calculator.getMaxIterations(), elapsedSeconds));
+
+			Log.d("TAG","Test completed");
+
+
 		}
+
+		Log.d("TAG","Test completed");
+
 	}
 }
