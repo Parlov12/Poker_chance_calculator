@@ -7,6 +7,15 @@
     android:background="@drawable/background1_1"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TEST"
+        app:layout_constraintBottom_toBottomOf="@+id/scroll_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
         android:id="@+id/stol"
         android:layout_width="0dp"
@@ -1068,6 +1077,7 @@
         android:background="@drawable/veliki_okvir"
         android:gravity="center_horizontal"
         android:orientation="vertical"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

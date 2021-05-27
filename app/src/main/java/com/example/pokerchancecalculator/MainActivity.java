@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -46,6 +47,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        // test
+        Intent startTest = new Intent(MainActivity.this, Test.class);
+        startTest.putExtra("key", 0); //Optional parameters
+
+        Button testniButton = findViewById(R.id.test);
+
+        testniButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.this.startActivity(startTest);
+
+            }
+        });
+        //kraj test
 
         Log.d(TAG, "onCreate created");
 
