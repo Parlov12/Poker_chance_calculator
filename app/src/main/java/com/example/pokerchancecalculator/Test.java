@@ -18,4 +18,6 @@ public class Test extends AppCompatActivity {
         TextView ispis = findViewById(R.id.ispis);
         EditText karte = findViewById(R.id.karte);
     }
+
+
 }
