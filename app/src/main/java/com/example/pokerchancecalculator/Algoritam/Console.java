@@ -13,6 +13,7 @@ public class Console
 
 		//odavde iscitavas sta je korisnik unia u konzolu. Nakon '-b' kupi string koji predstavalja plocu a nakon toga kupi stringove koji
 		//predstavljaju ruke
+		// u redu
 		for (String s: args) {
 			if(s.equals("-b")) {
 				isBoard = true;
@@ -31,6 +32,7 @@ public class Console
 
 		if(handsStr.size() < 2) {
 			throw new Exception("You must enter at least 2 hands");
+			// hm
 		}
 
 

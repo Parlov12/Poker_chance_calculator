@@ -1065,7 +1065,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="100dp"
-        android:background="@drawable/okvir"
+        android:background="@drawable/veliki_okvir"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -1077,9 +1077,9 @@
             android:id="@+id/card_type"
             android:layout_width="wrap_content"
             android:layout_height="70dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
             android:orientation="horizontal"
             android:weightSum="1">
 
@@ -1125,9 +1125,9 @@
             android:id="@+id/cards_first_row"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="0dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="8dp"
             android:orientation="horizontal"
             android:weightSum="1">
 
@@ -1182,9 +1182,9 @@
             android:id="@+id/cards_second_row"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="0dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="8dp"
             android:orientation="horizontal"
             android:weightSum="1">
 
@@ -1239,9 +1239,9 @@
             android:id="@+id/cards_third_row"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="0dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="8dp"
             android:orientation="horizontal"
             android:weightSum="1">
 

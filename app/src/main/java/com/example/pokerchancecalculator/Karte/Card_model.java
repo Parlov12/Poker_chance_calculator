@@ -8,7 +8,7 @@ public class Card_model {
 
     public Card_model()
     {
-        type = "null";
+        type = null;
         number = 0;
         pic = 0;
     }

@@ -15,7 +15,7 @@ public class Cards{
     public  List<Card_model> spades = new ArrayList<Card_model>();
     public  List<Card_model> clubs = new ArrayList<Card_model>();
     public  List<Card_model> hearts = new ArrayList<Card_model>();
-    public  List<Card_model> diamonds = new ArrayList<Card_model>();
+    public  List<Card_model> diamonds = new ArrayList   <Card_model>();
     public List<Player> igraci = new ArrayList<Player>(9);
     public List<Card_model> table = new ArrayList<Card_model>(5);
     public  List<Card_model> all_cards = new ArrayList<Card_model>(52);
