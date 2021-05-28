@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    private List<Card_model> cards = new ArrayList<Card_model>();
+    private Card_model[] cards = new Card_model[2];
     Card_model empty_card = new Card_model();
 
 
@@ -17,8 +17,8 @@ public class Player {
         cards.add(empty_card);
         cards.add(empty_card);
 
-        cards.set(0, new Card_model("null","null",0));
-        cards.set(1, new Card_model("null","null",0));
+        cards[0] =  new Card_model("null","null",0);
+        cards[1] = new Card_model("null","null",0);
     }
 
     public Player(Card_model a, Card_model b)

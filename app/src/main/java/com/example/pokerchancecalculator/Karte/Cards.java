@@ -17,9 +17,9 @@ public class Cards{
     public  List<Card_model> c = new ArrayList<Card_model>();
     public  List<Card_model> h = new ArrayList<Card_model>();
     public List<Card_model> d = new ArrayList   <Card_model>();
-    public List<Player> igraci = new ArrayList<Player>();
     public List<Card_model> table = new ArrayList<Card_model>();
     public  List<Card_model> all_cards = new ArrayList<Card_model>();
+    public Player[] igraci = new Player[9];
 
     public  List<Card_model> selectedCards = new ArrayList<Card_model>();
     public int i;
