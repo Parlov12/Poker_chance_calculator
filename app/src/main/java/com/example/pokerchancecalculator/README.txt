@@ -26,3 +26,19 @@ OSNOVNE FUNKCIONALNOSTI
     -> statistika pojedinog igraca
     -> win, tie, lose // tie cu maknit ako ne smislimo nesto
     -> win/lose za pojedinog igraca odnosno id TextView-a je napravljen po modelu win<broj_igraca> i lose<broj_igraca>
+
+    // MALA IZMJENA - ZANEMARI SVE OVO GORE TJ NECE TI BIT POTREBNO
+    -> na samom pocetku MainActivity-a imas dvi stvari
+
+        public Player[] players = new Player[9];
+        public Card_model[] table = new Card_model[5];
+
+    -> i iz ovoga uzimas podatke, znaci za karte odredenog igraca
+       ide player[index_igraca].cards[0 ili 1, tj prva ili druga karta].getNumber() i getType()
+       za karte sa stola ide table[index karte].getNumber() odnosno table[index].getType()
+
+    -> a za String mos uzet isto String napravljen na pocetku MainActivity-a String[] konacan_unos i njega slat u funkciju
+
+
+
+

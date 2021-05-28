@@ -22,8 +22,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pokerchancecalculator.Algoritam.Card;
 import com.example.pokerchancecalculator.Karte.Card_model;
 import com.example.pokerchancecalculator.Karte.Cards;
+import com.example.pokerchancecalculator.Karte.Player;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
@@ -40,9 +42,11 @@ public class MainActivity extends AppCompatActivity {
     int num = 0;
     int igrac = 0;
     int karta = 1;
+    int tableInd = 0;
     Boolean checkTable = false;
     public String[] konacan_unos;
-
+    public Player[] players = new Player[9];
+    public Card_model[] table = new Card_model[5];
 
 
     @Override
@@ -50,6 +54,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        for(i = 0; i < 9; i++)
+        {
+            players[i] = new Player();
+        }
+
+        for(i = 0; i < 5; i++)
+        {
+            table[i] = new Card_model();
+        }
 
 
         // test
@@ -84,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         Drawable foreground = ResourcesCompat.getDrawable(res, R.drawable.foreground_selector, null);
         Drawable foreground_null = ResourcesCompat.getDrawable(res, R.drawable.foreground_null, null);
 
-        info(karte);
+        info();
 
 
 
@@ -284,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
         playerCards.get(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                info(karte);
+                info();
                 openDialog(0, dialog_cards_view, playerCards.get(0));
                 igrac = 0;
                 karta = 0;
@@ -436,12 +449,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num = 0;
                 closeDialog(dialog_cards_view, dialogCards.get(0), playerCards, tableCards);
-                karte.addSelectedCard(vrsta,0);
                 if(!checkTable) {
-                    karte.addSelectedCardToPlayer(vrsta, num, igrac, karta);
+                    addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards);
+                }
+                else if(checkTable)
+                {
+                    addCardTable(vrsta, num, tableInd, karte.all_cards);
                 }
                 checkTable = false;
-                info(karte);
+                info();
             }
         });
         dialogCards.get(1).setOnClickListener(new View.OnClickListener() {
@@ -449,12 +465,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num = 1;
                 closeDialog(dialog_cards_view, dialogCards.get(1), playerCards, tableCards);
-                karte.addSelectedCard(vrsta,1);
                 if(!checkTable) {
-                    karte.addSelectedCardToPlayer(vrsta, num, igrac, karta);
+                    addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards);
+                }
+                else if(checkTable)
+                {
+                    addCardTable(vrsta, num, tableInd, karte.all_cards);
                 }
                 checkTable = false;
-                info(karte);
+                info();
             }
         });
         dialogCards.get(2).setOnClickListener(new View.OnClickListener() {
@@ -462,12 +481,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num = 2;
                 closeDialog(dialog_cards_view, dialogCards.get(2), playerCards, tableCards);
-                karte.addSelectedCard(vrsta,2);
                 if(!checkTable) {
-                    karte.addSelectedCardToPlayer(vrsta, num, igrac, karta);
+                    addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards);
+                }
+                else if(checkTable)
+                {
+                    addCardTable(vrsta, num, tableInd, karte.all_cards);
                 }
                 checkTable = false;
-                info(karte);
+                info();
             }
         });
         dialogCards.get(3).setOnClickListener(new View.OnClickListener() {
@@ -475,12 +497,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num = 3;
                 closeDialog(dialog_cards_view, dialogCards.get(3), playerCards, tableCards);
-                karte.addSelectedCard(vrsta,3);
                 if(!checkTable) {
-                    karte.addSelectedCardToPlayer(vrsta, num, igrac, karta);
+                    addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards);
+                }
+                else if(checkTable)
+                {
+                    addCardTable(vrsta, num, tableInd, karte.all_cards);
                 }
                 checkTable = false;
-                info(karte);
+                info();
             }
         });
         dialogCards.get(4).setOnClickListener(new View.OnClickListener() {
@@ -488,12 +513,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num = 4;
                 closeDialog(dialog_cards_view, dialogCards.get(4), playerCards, tableCards);
-                karte.addSelectedCard(vrsta,4);
                 if(!checkTable) {
-                    karte.addSelectedCardToPlayer(vrsta, num, igrac, karta);
+                    addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards);
+                }
+                else if(checkTable)
+                {
+                    addCardTable(vrsta, num, tableInd, karte.all_cards);
                 }
                 checkTable = false;
-                info(karte);
+                info();
             }
         });
         dialogCards.get(5).setOnClickListener(new View.OnClickListener() {
@@ -501,12 +529,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num = 5;
                 closeDialog(dialog_cards_view, dialogCards.get(5), playerCards, tableCards);
-                karte.addSelectedCard(vrsta,5);
                 if(!checkTable) {
-                    karte.addSelectedCardToPlayer(vrsta, num, igrac, karta);
+                    addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards);
+                }
+                else if(checkTable)
+                {
+                    addCardTable(vrsta, num, tableInd, karte.all_cards);
                 }
                 checkTable = false;
-                info(karte);
+                info();
             }
         });
         dialogCards.get(6).setOnClickListener(new View.OnClickListener() {
@@ -514,12 +545,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num = 6;
                 closeDialog(dialog_cards_view, dialogCards.get(6), playerCards, tableCards);
-                karte.addSelectedCard(vrsta,6);
                 if(!checkTable) {
-                    karte.addSelectedCardToPlayer(vrsta, num, igrac, karta);
+                    addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards);
+                }
+                else if(checkTable)
+                {
+                    addCardTable(vrsta, num, tableInd, karte.all_cards);
                 }
                 checkTable = false;
-                info(karte);
+                info();
             }
         });
         dialogCards.get(7).setOnClickListener(new View.OnClickListener() {
@@ -527,12 +561,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num = 7;
                 closeDialog(dialog_cards_view, dialogCards.get(7), playerCards, tableCards);
-                karte.addSelectedCard(vrsta,7);
                 if(!checkTable) {
-                    karte.addSelectedCardToPlayer(vrsta, num, igrac, karta);
+                    addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards);
+                }
+                else if(checkTable)
+                {
+                    addCardTable(vrsta, num, tableInd, karte.all_cards);
                 }
                 checkTable = false;
-                info(karte);
+                info();
             }
         });
         dialogCards.get(8).setOnClickListener(new View.OnClickListener() {
@@ -540,12 +577,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num = 8;
                 closeDialog(dialog_cards_view, dialogCards.get(8), playerCards, tableCards);
-                karte.addSelectedCard(vrsta,8);
                 if(!checkTable) {
-                    karte.addSelectedCardToPlayer(vrsta, num, igrac, karta);
+                    addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards);
+                }
+                else if(checkTable)
+                {
+                    addCardTable(vrsta, num, tableInd, karte.all_cards);
                 }
                 checkTable = false;
-                info(karte);
+                info();
             }
         });
         dialogCards.get(9).setOnClickListener(new View.OnClickListener() {
@@ -553,12 +593,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num = 9;
                 closeDialog(dialog_cards_view, dialogCards.get(9), playerCards, tableCards);
-                karte.addSelectedCard(vrsta,9);
                 if(!checkTable) {
-                    karte.addSelectedCardToPlayer(vrsta, num, igrac, karta);
+                    addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards);
+                }
+                else if(checkTable)
+                {
+                    addCardTable(vrsta, num, tableInd, karte.all_cards);
                 }
                 checkTable = false;
-                info(karte);
+                info();
             }
         });
         dialogCards.get(10).setOnClickListener(new View.OnClickListener() {
@@ -566,12 +609,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num = 10;
                 closeDialog(dialog_cards_view, dialogCards.get(10), playerCards, tableCards);
-                karte.addSelectedCard(vrsta,10);
                 if(!checkTable) {
-                    karte.addSelectedCardToPlayer(vrsta, num, igrac, karta);
+                    addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards);
+                }
+                else if(checkTable)
+                {
+                    addCardTable(vrsta, num, tableInd, karte.all_cards);
                 }
                 checkTable = false;
-                info(karte);
+                info();
             }
         });
         dialogCards.get(11).setOnClickListener(new View.OnClickListener() {
@@ -579,12 +625,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num = 11;
                 closeDialog(dialog_cards_view, dialogCards.get(11), playerCards, tableCards);
-                karte.addSelectedCard(vrsta,11);
                 if(!checkTable) {
-                    karte.addSelectedCardToPlayer(vrsta, num, igrac, karta);
+                    addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards);
+                }
+                else if(checkTable)
+                {
+                    addCardTable(vrsta, num, tableInd, karte.all_cards);
                 }
                 checkTable = false;
-                info(karte);
+                info();
             }
         });
         dialogCards.get(12).setOnClickListener(new View.OnClickListener() {
@@ -592,12 +641,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num = 12;
                 closeDialog(dialog_cards_view, dialogCards.get(12), playerCards, tableCards);
-                karte.addSelectedCard(vrsta,12);
                 if(!checkTable) {
-                    karte.addSelectedCardToPlayer(vrsta, num, igrac, karta);
+                    addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards);
+                }
+                else if(checkTable)
+                {
+                    addCardTable(vrsta, num, tableInd, karte.all_cards);
                 }
                 checkTable = false;
-                info(karte);
+                info();
                 mate();
             }
         });
@@ -605,6 +657,7 @@ public class MainActivity extends AppCompatActivity {
         tableCards.get(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tableInd = 0;
                 openDialog(18, dialog_cards_view, tableCards.get(0));
                 checkTable = true;
             }
@@ -612,6 +665,7 @@ public class MainActivity extends AppCompatActivity {
         tableCards.get(1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tableInd = 1;
                 openDialog(19, dialog_cards_view, tableCards.get(1));
                 checkTable = true;
             }
@@ -619,6 +673,7 @@ public class MainActivity extends AppCompatActivity {
         tableCards.get(2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tableInd = 2;
                 openDialog(20, dialog_cards_view, tableCards.get(2));
                 checkTable = true;
             }
@@ -626,6 +681,7 @@ public class MainActivity extends AppCompatActivity {
         tableCards.get(3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tableInd = 3;
                 openDialog(21, dialog_cards_view, tableCards.get(3));
                 checkTable = true;
             }
@@ -633,6 +689,7 @@ public class MainActivity extends AppCompatActivity {
         tableCards.get(4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tableInd = 4;
                 openDialog(22, dialog_cards_view, tableCards.get(4));
                 checkTable = true;
             }
@@ -754,17 +811,71 @@ public class MainActivity extends AppCompatActivity {
         currentImageView = sharedPref.getInt("NUMBER", 0);
     }
 
-    public void info(Cards c)
+    public void info()
     {
         for(int i = 0; i < 9; i++) {
             System.out.println(String.format("IGRAC%d",i+1));
-            c.igraci.get(i).sysOut();
+            players[i].sysOut();
+        }
+        for(i = 0; i < 5; i++)
+        {
+            System.out.println(String.format("%d. table card -> %s %s", i+1, table[i].getType(), table[i].getNumber()));
         }
     }
 
     public void mate()
     {
 
+    }
+
+    public void addSelectedCardToPlayer(int vrsta, int broj, int igrac, int red_br, Player[] p, List<Card_model> all_c)
+    {
+        int a = vrsta;
+        int b = broj;
+        int c = igrac;
+        int d = red_br;
+        int f = 0;
+        if(vrsta == 0)
+        {
+            f = 0;
+        }
+        else if(vrsta == 1)
+        {
+            f = 13;
+        }
+        else if(vrsta == 2)
+        {
+            f = 26;
+        }
+        else if(vrsta == 3)
+        {
+            f = 39;
+        }
+        System.out.println(String.format("vrst = %d, broj = %d, igrac = %d, red_br = %d", a,b,c,d));
+
+        p[igrac].addCard(red_br, all_c.get(f+broj));
+    }
+
+    public void addCardTable(int vrsta, int broj, int tableIndex, List<Card_model> all_cards)
+    {
+        int f = 0;
+        if(vrsta == 0)
+        {
+            f = 0;
+        }
+        else if(vrsta == 1)
+        {
+            f = 13;
+        }
+        else if(vrsta == 2)
+        {
+            f = 26;
+        }
+        else if(vrsta == 3)
+        {
+            f = 39;
+        }
+        table[tableIndex] = all_cards.get(f+broj);
     }
 
 

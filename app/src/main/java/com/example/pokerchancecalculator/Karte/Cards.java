@@ -17,7 +17,7 @@ public class Cards{
     public  List<Card_model> c = new ArrayList<Card_model>();
     public  List<Card_model> h = new ArrayList<Card_model>();
     public List<Card_model> d = new ArrayList   <Card_model>();
-    public List<Card_model> table = new ArrayList<Card_model>();
+    public Card_model[] table = new Card_model[5];
     public  List<Card_model> all_cards = new ArrayList<Card_model>();
     public Player[] igraci = new Player[9];
 
@@ -31,12 +31,12 @@ public class Cards{
 
         for(i = 0; i < 9; i++)
         {
-            igraci.add(empty_player);
+            igraci[i] = empty_player;
         }
 
         for(i = 0; i < 5; i++)
         {
-            table.add(empty_card);
+            table[i] = empty_card;
         }
 
 
@@ -227,9 +227,7 @@ public class Cards{
         }
         System.out.println(String.format("vrst = %d, broj = %d, igrac = %d, red_br = %d", a,b,c,d));
 
-        Player pomocniIgrac = new Player(igraci.get(igrac).getFirstCard(), igraci.get(igrac).getSecondCard());
-        pomocniIgrac.addCard(red_br, all_cards.get(f+broj));
-        igraci.set(igrac, new Player(pomocniIgrac.getFirstCard(),pomocniIgrac.getSecondCard()));
+        igraci[igrac].addCard(red_br, all_cards.get(f+broj));
     }
 
     public void addTableCard(int vrsta, int broj) {
@@ -247,7 +245,7 @@ public class Cards{
         {
             // do nothing
         }
-        table.add(all_cards.get(f + broj));
+        //
     }
 
 
