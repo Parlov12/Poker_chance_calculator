@@ -54,7 +54,7 @@ public class Test extends AppCompatActivity {
 
 
                 try {
-                    c.test(unos, ispis);
+                    //c.test(unos, ispis);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

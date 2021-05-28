@@ -39,6 +39,10 @@ OSNOVNE FUNKCIONALNOSTI
 
     -> a za String mos uzet isto String napravljen na pocetku MainActivity-a String[] konacan_unos i njega slat u funkciju
 
+    -> MATE:
+    -> 1. Kad odaberen desetku izbaci mi ovaj error: System.err: java.lang.Exception: Invalid card rank: 0
+    -> Kolko san svatia stavia si 10 ko obilježje karte a TestConsole prima T ko simbol desetke
+    -> 2. clubs i hearts si zaminia u označavanju karata
 
 
 

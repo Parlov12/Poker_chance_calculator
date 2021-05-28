@@ -9,7 +9,9 @@ import java.util.ArrayList;
 
 public class TestConsole
 {
-	public static void test(String[] args, TextView c) throws Exception {
+	// prominit ćeš da test prima array textview-ova
+	//
+	public static void test(String[] args, TextView[] c) throws Exception {
 		Log.d("TAG","Test started");
 
 		boolean isBoard = false;
@@ -17,11 +19,9 @@ public class TestConsole
 		ArrayList<String> handsStr = new ArrayList<>();
 		ArrayList<Hand> hands = new ArrayList<>();
 
-		//odavde iscitavas sta je korisnik unia u konzolu. Nakon '-b' kupi string koji predstavalja plocu a nakon toga kupi stringove koji
-		//predstavljaju ruke
-		// u redu
-		// ok
+		System.out.println("Test console");
 		for (String s: args) {
+			System.out.println(s);
 			if(s.equals("-b")) {
 				isBoard = true;
 				continue;
@@ -36,6 +36,7 @@ public class TestConsole
 				handsStr.add(s);
 			}
 		}
+		System.out.println("Test console - kraj");
 
 		if(handsStr.size() < 2) {
 			throw new Exception("You must enter at least 2 hands");
@@ -47,7 +48,7 @@ public class TestConsole
 
 		// stvara objekt klase kalkulator koji zapravo racuna postotke
 		EquityCalculator calculator = new EquityCalculator();
-		calculator.setMaxIterations(1000);
+		calculator.setMaxIterations(200000);
 
 		// ako ima nesto na ploci, napravi plocu iz zadanog stringa
 		if(!board.isEmpty()) {
@@ -79,7 +80,7 @@ public class TestConsole
 			String preprend = calculator.boardIsEmpty() ? "~" : "";
 
 			System.out.println(String.format("Player %d: %s - %s --- %s%s\n", 1+i, hands.get(i), hr, preprend, he));
-			c.append(String.format("Player %d: %s - %s --- %s%s", 1+i, hands.get(i), hr, preprend, he));
+			c[i].setText(String.format("%s - %s --- %s%s", hands.get(i), hr, preprend, he));
 		}
 
 
