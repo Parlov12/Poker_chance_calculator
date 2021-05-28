@@ -41,12 +41,15 @@ public class MainActivity extends AppCompatActivity {
     int igrac = 0;
     int karta = 1;
     Boolean checkTable = false;
+    public String[] konacan_unos;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
         // test
@@ -81,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         Drawable foreground = ResourcesCompat.getDrawable(res, R.drawable.foreground_selector, null);
         Drawable foreground_null = ResourcesCompat.getDrawable(res, R.drawable.foreground_null, null);
 
+        info(karte);
 
 
 
@@ -225,6 +229,8 @@ public class MainActivity extends AppCompatActivity {
         spades.setForeground(foreground);
 
 
+
+
         // CLICK LISTENERS
         spades.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -275,14 +281,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-            playerCards.get(0).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    openDialog(0, dialog_cards_view, playerCards.get(0));
-                    igrac = 0;
-                    karta = 0;
-                }
-            });
+        playerCards.get(0).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                info(karte);
+                openDialog(0, dialog_cards_view, playerCards.get(0));
+                igrac = 0;
+                karta = 0;
+            }
+        });
         playerCards.get(1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -591,6 +598,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 checkTable = false;
                 info(karte);
+                mate();
             }
         });
 
@@ -750,10 +758,13 @@ public class MainActivity extends AppCompatActivity {
     {
         for(int i = 0; i < 9; i++) {
             System.out.println(String.format("IGRAC%d",i+1));
-            for(int j = 0; j < 2; j++) {
-                System.out.println(String.format("%d.karta - %d %s", j+1, c.igraci.get(i).cards.get(j).number, c.igraci.get(i).cards.get(j).type));
-            }
+            c.igraci.get(i).sysOut();
         }
+    }
+
+    public void mate()
+    {
+
     }
 
 

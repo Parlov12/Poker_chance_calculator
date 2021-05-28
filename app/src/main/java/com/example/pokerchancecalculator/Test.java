@@ -20,9 +20,9 @@ public class Test extends AppCompatActivity {
         Button calc = findViewById(R.id.calculate);
         TextView ispis = findViewById(R.id.ispis);
         EditText karta1 = findViewById(R.id.karte);
-        EditText karta2 = findViewById(R.id.karte);
-        EditText karta3 = findViewById(R.id.karte);
-        EditText board = findViewById(R.id.karte);
+        EditText karta2 = findViewById(R.id.karte2);
+        EditText karta3 = findViewById(R.id.karte3);
+        EditText board = findViewById(R.id.board);
 
         TestConsole c = null;
         String[] unos = {"-b","7d9dTs","JhJs","AdJd","KcQd"};
@@ -31,23 +31,25 @@ public class Test extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(karta1.getText().toString() != "")
+                if(!karta1.getText().toString().matches(""))
                 {
                     unos[2] = karta1.getText().toString();
                 }
-                if(karta2.getText().toString() != "")
+                if(!karta2.getText().toString().matches(""))
                 {
                     unos[3] = karta2.getText().toString();
                 }
-                if(karta3.getText().toString() != "")
+                if(!karta3.getText().toString().matches(""))
                 {
                     unos[4] = karta3.getText().toString();
                 }
 
-                if(board.getText().toString() != "")
+                if(!board.getText().toString().matches(""))
                 {
                     unos[1] = board.getText().toString();
                 }
+
+                System.out.println(String.format("Unos1 - %s Unos2 - %s Unos3 - %s Unos4 - %s", unos[0], unos[1], unos[2], unos[3]));
 
 
 

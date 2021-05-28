@@ -7,45 +7,72 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    public List<Card_model> cards = new ArrayList<Card_model>(2);
+    private List<Card_model> cards = new ArrayList<Card_model>();
     Card_model empty_card = new Card_model();
+
+
 
     public Player()
     {
         cards.add(empty_card);
         cards.add(empty_card);
 
-        cards.get(0).setCard("null",0,0);
-        cards.get(1).setCard("null",0,0);
+        cards.set(0, new Card_model("null","null",0));
+        cards.set(1, new Card_model("null","null",0));
     }
 
-    public void addCard1(Card_model a)
+    public Player(Card_model a, Card_model b)
     {
-        cards.get(0).number = a.number;
-        cards.get(0).type = a.type;
-        cards.get(0).pic = a.pic;
+        cards.add(empty_card);
+        cards.add(empty_card);
+
+        cards.set(0, new Card_model(a));
+        cards.set(1, new Card_model(b));
     }
 
-    public void addCard2(Card_model a)
+    public Player(int i,Card_model a)
     {
-        cards.get(1).number = a.number;
-        cards.get(1).type = a.type;
-        cards.get(1).pic = a.pic;
-    }
+        cards.add(empty_card);
+        cards.add(empty_card);
+        if(i == 0)
+        {
+            cards.set(0, a);
+        }
+        if(i == 1)
+        {
+            cards.set(1, a);
+        }    }
+
+        public Card_model getFirstCard()
+        {
+            return cards.get(0);
+        }
+
+        public Card_model getSecondCard()
+        {
+            return cards.get(1);
+        }
+
+
 
     public void addCard(int i, Card_model a)
     {
-        if(i == 0)
-        {
-            addCard1(a);
-        }
-        else if(i == 1)
-        {
-            addCard2(a);
-        }
-        else
-        {
-            Log.d("PLAYER CLASS", "Error");
-        }
+
+       if(i == 0) {
+           cards.set(0, new Card_model(a.getNumber(),a.getType(),0));
+       }
+       else if(i == 1) {
+           cards.set(1, new Card_model(a.getNumber(),a.getType(),0));
+       }
+       else {
+           System.out.println("Error - Player class!");
+       }
+
+
+    }
+
+    public void sysOut()
+    {
+        System.out.println(String.format("1.karta - %s %s\n2. karta - %s %s", cards.get(0).getNumber(), cards.get(0).getType(), cards.get(0).getNumber(), cards.get(0).getType()));
     }
 }

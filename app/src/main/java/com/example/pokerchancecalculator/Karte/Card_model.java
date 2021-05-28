@@ -2,23 +2,57 @@ package com.example.pokerchancecalculator.Karte;
 
 public class Card_model {
 
-    public String type;
-    public int number;
-    public int pic;
+    private String type;
+    private String number;
+    private int pic;
 
     public Card_model()
     {
         type = null;
-        number = 0;
+        number = null;
         pic = 0;
     }
 
-    public void setCard(String vrsta, int broj, int slika)
+    public Card_model(Card_model a)
     {
-        type = vrsta;
-        number = broj;
-        pic = slika;
+        type = a.type;
+        number = a.number;
+        pic = a.pic;
     }
+
+
+
+    public Card_model(String vrsta, String broj, int slika)
+    {
+        this.type = vrsta;
+        this.number = broj;
+        this.pic = slika;
+    }
+
+    public void setCard(String vrsta, String broj, int slika)
+    {
+        this.type = vrsta;
+        this.number = broj;
+        this.pic = slika;
+    }
+
+    public String getType()
+    {
+        return type;
+    }
+
+    public String getNumber()
+    {
+        return number;
+    }
+
+    public int getPic()
+    {
+        return pic;
+    }
+
+
+
 
     public void setCard(Card_model c)
     {
