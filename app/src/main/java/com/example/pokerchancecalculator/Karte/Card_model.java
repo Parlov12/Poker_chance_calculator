@@ -36,6 +36,19 @@ public class Card_model {
         this.pic = slika;
     }
 
+    public void setCard(Card_model a)
+    {
+        this.type = a.type;
+        this.number = a.number;
+        this.pic = a.pic;
+    }
+
+    public void setTypeAndNumber(String vrsta, String broj)
+    {
+        this.type = vrsta;
+        this.type = broj;
+    }
+
     public String getType()
     {
         return type;
@@ -49,16 +62,6 @@ public class Card_model {
     public int getPic()
     {
         return pic;
-    }
-
-
-
-
-    public void setCard(Card_model c)
-    {
-        type = c.type;
-        number = c.number;
-        pic = c.pic;
     }
 
 

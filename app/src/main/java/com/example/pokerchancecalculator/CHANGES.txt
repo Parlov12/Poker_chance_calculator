@@ -1,0 +1,18 @@
+// PARLOV
+
+- 15th commit
+    -> maknuti draw i lose stats
+    -> win_stats1 i win_stats2 zamjenjeni tj vraceni na svoje misto
+    -> odabrana karta se vise ne moze odabrat // ne radi jos, neki je problem s kartama na stolu, moram to jos rjesit
+    -> 10 zamijenjena u "T"
+
+
+
+
+// MATE
+
+
+
+
+
+// CULJAK

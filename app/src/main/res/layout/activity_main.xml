@@ -197,12 +197,13 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
+                        android:gravity="center_horizontal"
                         android:orientation="horizontal"
                         android:weightSum="3">
 
                         <TextView
-                            android:id="@+id/win_stats2"
-                            android:layout_width="0dp"
+                            android:id="@+id/win_stats1"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -210,25 +211,6 @@
                             android:textColor="#FFFFFF"
                             android:textSize="10sp" />
 
-                        <TextView
-                            android:id="@+id/draw_stats2"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="TIE\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/lose_stats2"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="LOSE\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -293,12 +275,13 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
+                        android:gravity="center_horizontal"
                         android:orientation="horizontal"
                         android:weightSum="3">
 
                         <TextView
-                            android:id="@+id/win_stats1"
-                            android:layout_width="0dp"
+                            android:id="@+id/win_stats2"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
@@ -306,25 +289,6 @@
                             android:textColor="#FFFFFF"
                             android:textSize="10sp" />
 
-                        <TextView
-                            android:id="@+id/draw_stats1"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="TIE\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/lose_stats1"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="LOSE\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -403,36 +367,17 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
+                        android:gravity="center_horizontal"
                         android:orientation="horizontal"
                         android:weightSum="3">
 
                         <TextView
                             android:id="@+id/win_stats3"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="WIN\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/draw_stats3"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="TIE\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/lose_stats3"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="LOSE\n00,00%"
                             android:textColor="#FFFFFF"
                             android:textSize="10sp" />
                     </LinearLayout>
@@ -498,36 +443,17 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
+                        android:gravity="center_horizontal"
                         android:orientation="horizontal"
                         android:weightSum="3">
 
                         <TextView
                             android:id="@+id/win_stats4"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="WIN\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/draw_stats4"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="TIE\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/lose_stats4"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="LOSE\n00,00%"
                             android:textColor="#FFFFFF"
                             android:textSize="10sp" />
                     </LinearLayout>
@@ -608,36 +534,17 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
+                        android:gravity="center_horizontal"
                         android:orientation="horizontal"
                         android:weightSum="3">
 
                         <TextView
                             android:id="@+id/win_stats5"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="WIN\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/draw_stats5"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="TIE\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/lose_stats5"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="LOSE\n00,00%"
                             android:textColor="#FFFFFF"
                             android:textSize="10sp" />
                     </LinearLayout>
@@ -703,36 +610,17 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
+                        android:gravity="center_horizontal"
                         android:orientation="horizontal"
                         android:weightSum="3">
 
                         <TextView
                             android:id="@+id/win_stats6"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="WIN\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/draw_stats6"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="TIE\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/lose_stats6"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="LOSE\n00,00%"
                             android:textColor="#FFFFFF"
                             android:textSize="10sp" />
                     </LinearLayout>
@@ -813,36 +701,17 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
+                        android:gravity="center_horizontal"
                         android:orientation="horizontal"
                         android:weightSum="3">
 
                         <TextView
                             android:id="@+id/win_stats7"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="WIN\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/draw_stats7"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="TIE\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/lose_stats7"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="LOSE\n00,00%"
                             android:textColor="#FFFFFF"
                             android:textSize="10sp" />
                     </LinearLayout>
@@ -908,36 +777,17 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="5dp"
+                        android:gravity="center_horizontal"
                         android:orientation="horizontal"
                         android:weightSum="3">
 
                         <TextView
                             android:id="@+id/win_stats8"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="WIN\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/draw_stats8"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="TIE\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/lose_stats8"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="LOSE\n00,00%"
                             android:textColor="#FFFFFF"
                             android:textSize="10sp" />
                     </LinearLayout>
@@ -1023,31 +873,11 @@
 
                         <TextView
                             android:id="@+id/win_stats9"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="WIN\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/draw_stats9"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="TIE\n00,00%"
-                            android:textColor="#FFFFFF"
-                            android:textSize="10sp" />
-
-                        <TextView
-                            android:id="@+id/lose_stats9"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="LOSE\n00,00%"
                             android:textColor="#FFFFFF"
                             android:textSize="10sp" />
                     </LinearLayout>
@@ -1112,15 +942,6 @@
                 android:background="@drawable/hearts" />
 
             <ImageView
-                android:id="@+id/clubs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_weight="0.25"
-                android:background="@drawable/clubs" />
-
-            <ImageView
                 android:id="@+id/diamonds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -1128,6 +949,15 @@
                 android:layout_marginEnd="5dp"
                 android:layout_weight="0.25"
                 android:background="@drawable/diamonds" />
+
+            <ImageView
+                android:id="@+id/clubs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="0.25"
+                android:background="@drawable/clubs" />
 
         </LinearLayout>
 

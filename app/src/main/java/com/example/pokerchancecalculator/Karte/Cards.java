@@ -58,7 +58,7 @@ public class Cards{
         s.get(6).setCard("s","7", R.drawable.pik_7);
         s.get(7).setCard("s","8", R.drawable.pik_8);
         s.get(8).setCard("s","9", R.drawable.pik_9);
-        s.get(9).setCard("s","10", R.drawable.pik_10);
+        s.get(9).setCard("s","T", R.drawable.pik_10);
         s.get(10).setCard("s","J", R.drawable.pik_11);
         s.get(11).setCard("s","Q", R.drawable.pik_12);
         s.get(12).setCard("s","K", R.drawable.pik_13);
@@ -73,7 +73,7 @@ public class Cards{
         h.get(6).setCard("h","7", R.drawable.herc_7);
         h.get(7).setCard("h","8", R.drawable.herc_8);
         h.get(8).setCard("h","9", R.drawable.herc_9);
-        h.get(9).setCard("h","10", R.drawable.herc_10);
+        h.get(9).setCard("h","T", R.drawable.herc_10);
         h.get(10).setCard("h","J", R.drawable.herc_11);
         h.get(11).setCard("h","Q", R.drawable.herc_12);
         h.get(12).setCard("h","K", R.drawable.herc_13);
@@ -88,7 +88,7 @@ public class Cards{
         c.get(6).setCard("c","7", R.drawable.tref_7);
         c.get(7).setCard("c","8", R.drawable.tref_8);
         c.get(8).setCard("c","9", R.drawable.tref_9);
-        c.get(9).setCard("c","10", R.drawable.tref_10);
+        c.get(9).setCard("c","T", R.drawable.tref_10);
         c.get(10).setCard("c","J", R.drawable.tref_11);
         c.get(11).setCard("c","Q", R.drawable.tref_12);
         c.get(12).setCard("c","K", R.drawable.tref_13);
@@ -103,7 +103,7 @@ public class Cards{
         d.get(6).setCard("d","7", R.drawable.karo_7);
         d.get(7).setCard("d","8", R.drawable.karo_8);
         d.get(8).setCard("d","9", R.drawable.karo_9);
-        d.get(9).setCard("d","10", R.drawable.karo_10);
+        d.get(9).setCard("d","T", R.drawable.karo_10);
         d.get(10).setCard("d","J", R.drawable.karo_11);
         d.get(11).setCard("d","Q", R.drawable.karo_12);
         d.get(12).setCard("d","K", R.drawable.karo_13);
@@ -121,7 +121,7 @@ public class Cards{
         all_cards.set(6, new Card_model("s","7", R.drawable.pik_7));
         all_cards.set(7, new Card_model("s","8", R.drawable.pik_8));
         all_cards.set(8, new Card_model("s","9", R.drawable.pik_9));
-        all_cards.set(9, new Card_model("s","10", R.drawable.pik_10));
+        all_cards.set(9, new Card_model("s","T", R.drawable.pik_10));
         all_cards.set(10, new Card_model("s","J", R.drawable.pik_11));
         all_cards.set(11, new Card_model("s","Q", R.drawable.pik_12));
         all_cards.set(12, new Card_model("s","K", R.drawable.pik_13));
@@ -135,7 +135,7 @@ public class Cards{
         all_cards.set(19, new Card_model("h","7", R.drawable.herc_7));
         all_cards.set(20, new Card_model("h","8", R.drawable.herc_8));
         all_cards.set(21, new Card_model("h","9", R.drawable.herc_9));
-        all_cards.set(22, new Card_model("h","10", R.drawable.herc_10));
+        all_cards.set(22, new Card_model("h","T", R.drawable.herc_10));
         all_cards.set(23, new Card_model("h","J", R.drawable.herc_11));
         all_cards.set(24, new Card_model("h","Q", R.drawable.herc_12));
         all_cards.set(25, new Card_model("h","K", R.drawable.herc_13));
@@ -149,7 +149,7 @@ public class Cards{
         all_cards.set(32, new Card_model("c","7", R.drawable.tref_7));
         all_cards.set(33, new Card_model("c","8", R.drawable.tref_8));
         all_cards.set(34, new Card_model("c","9", R.drawable.tref_9));
-        all_cards.set(35, new Card_model("c","10", R.drawable.tref_10));
+        all_cards.set(35, new Card_model("c","T", R.drawable.tref_10));
         all_cards.set(36, new Card_model("c","J", R.drawable.tref_11));
         all_cards.set(37, new Card_model("c","Q", R.drawable.tref_12));
         all_cards.set(38, new Card_model("c","K", R.drawable.tref_13));
@@ -163,7 +163,7 @@ public class Cards{
         all_cards.set(45, new Card_model("d","7", R.drawable.karo_7));
         all_cards.set(46, new Card_model("d","8", R.drawable.karo_8));
         all_cards.set(47, new Card_model("d","9", R.drawable.karo_9));
-        all_cards.set(48, new Card_model("d","10", R.drawable.karo_10));
+        all_cards.set(48, new Card_model("d","T", R.drawable.karo_10));
         all_cards.set(49, new Card_model("d","J", R.drawable.karo_11));
         all_cards.set(50, new Card_model("d","Q", R.drawable.karo_12));
         all_cards.set(51, new Card_model("d","K", R.drawable.karo_13));
