@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         for (i = 0; i < 5; i++) {
             table[i] = new Card_model();
+            table[i].setCard("null", "null", 0);
         }
 
         for(i = 0; i < 52; i++)
@@ -149,6 +150,8 @@ public class MainActivity extends AppCompatActivity {
         ImageView p9_c1 = findViewById(R.id.player9_card1);
         ImageView p9_c2 = findViewById(R.id.player9_card2);
         textViews[8] = findViewById(R.id.win_stats9);
+
+
 
 
         // doda san sve textView-ove u niz textView-ov
@@ -304,7 +307,6 @@ public class MainActivity extends AppCompatActivity {
         // postavljanje na default - pik karte
         spades.setForeground(foreground);
 
-        infoSveKarte("Pocetak app");
 
         // CLICK LISTENERS
         spades.setOnClickListener(new View.OnClickListener() {
@@ -360,6 +362,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 info();
+                // otvara dijaloski okvir
+                // l - predstavlja index kliknute karte da bi se nakon sta se odabere karta
+                // odabrana karta mogla postavit na to misto
+                // dialog_cards_view - LinearLayout odnosno okvir dijaloskog okvira
+                // playerCards.get(0) - totalno nepotrebno
                 openDialog(0, dialog_cards_view, playerCards.get(0));
                 igrac = 0;
                 karta = 0;
@@ -604,33 +611,23 @@ public class MainActivity extends AppCompatActivity {
         dialogCards.get(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                infoSveKarte("Pocetak dialogCards click");
                 num = 0;
                 if(checkTable == true)
                 {
-                    infoSveKarte("detectTable cards prije dialogCards click");
                     detectCurrentTableCard(table, tableInd);
-                    infoSveKarte("detectTable cards poslije dialogCards click");
 
                 }
                 else
                 {
-                    infoSveKarte("detectPlayer cards prije dialogCards click");
                     detectCurrentPlayerCard(players, igrac, karta);
-                    infoSveKarte("detectPlayer cards poslije dialogCards click");
 
                 }
-                infoSveKarte("Nakon detecta");
 
                 closeDialog(dialog_cards_view, dialogCards.get(0), playerCards, tableCards);
                 if (!checkTable) {
-                    infoSveKarte("prije addSelectedCardToPLayer");
                     addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards, dialogCards);
-                    infoSveKarte("poslije addSelectedCardToPLayer");
                 } else if (checkTable) {
-                    infoSveKarte("prije addSelectedCardToTable");
                     addSelectedCardToTable(vrsta, num, tableInd, karte.all_cards, dialogCards);
-infoSveKarte("poslije addSelectedCardToTable");
 
                 }
                 checkTable = false;
@@ -916,7 +913,6 @@ infoSveKarte("poslije addSelectedCardToTable");
         tableCards.get(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                infoSveKarte("Pocetak click na tableCard[0]");
 
                 checkTable = true;
                 openDialog(18, dialog_cards_view, tableCards.get(0));
@@ -926,7 +922,6 @@ infoSveKarte("poslije addSelectedCardToTable");
                 hearts.setForeground(foreground_null);
                 clubs.setForeground(foreground_null);
                 diamonds.setForeground(foreground_null);
-                infoSveKarte("Kraj click na tableCard[0]");
             }
         });
         tableCards.get(1).setOnClickListener(new View.OnClickListener() {
@@ -987,16 +982,14 @@ infoSveKarte("poslije addSelectedCardToTable");
 
     public void openDialog(int l, LinearLayout dialog, ImageView m) {
         System.out.println("Dialog opened!");
-        infoSveKarte("Pocetak open dialog");
         dialog.setVisibility(View.VISIBLE);
         saveCurrentCard(l);
         currentImageView = l;
-        infoSveKarte("Kraj open dialog");
     }
 
     public void closeDialog(LinearLayout dialog, ImageView m, List<ImageView> lista, List<ImageView> lista2) {
         System.out.println("Dialog closed!");
-        infoSveKarte("Pocetak closeDialog");
+
         dialog.setVisibility(View.INVISIBLE);
         draw = m.getDrawable();
         if ((currentImageView >= 18) && (currentImageView <= 22)) {
@@ -1008,7 +1001,6 @@ infoSveKarte("poslije addSelectedCardToTable");
             toast = Toast.makeText(getApplicationContext(), "closeDialog ERROR!\ncurrentImageView out of range!", Toast.LENGTH_SHORT);
             toast.show();
         }
-        infoSveKarte("Kraj closeDialog!");
     }
 
 
@@ -1090,7 +1082,13 @@ infoSveKarte("poslije addSelectedCardToTable");
     public void mate() {
 
     }
-
+// vrsta - integer koji je 0 za s, 1 za h, 2 za c, 3 za d
+    // odnosno sluzi za postavljanje brojaca na index na kojem pocinje odredeni zog
+    // broj - broj karte u skupu zoga
+    // igrac - redni broj odabranog igraca(prvi igrac je pod indexom 0)
+    // red_br - redni broj karte igraca odnosno 0 za 1. kartu, 1 za 2. kartu
+    // all_c - lista svih karata deklariana u klasi Cards
+    // d - lista dijaloskih karata, odabrana karta tj taj ImageView se postavlja na sliku no_card
     public void addSelectedCardToPlayer(int vrsta, int broj, int igrac, int red_br, Player[] p, List<Card_model> all_c, List<ImageView> d) {
         int f = 0;
         if (vrsta == 0) {
@@ -1121,7 +1119,7 @@ infoSveKarte("poslije addSelectedCardToTable");
             f = 39;
         }
 
-        table[tableIndex].setCard(all_cards.get(f + broj).getType(), all_cards.get(f + broj).getNumber(), all_cards.get(f + broj).getPic());
+        table[tableIndex].setCard(all_cards.get(f + broj));
         sveKarte[f+broj].setCard("null", "null", no_card);
         d.get(broj).setImageResource(no_card);
         d.get(broj).setClickable(false);
@@ -1177,16 +1175,16 @@ infoSveKarte("poslije addSelectedCardToTable");
                 }
             }
 
-            for(int i = 0; i < 5; i++)
+            for(int i = 0; i < 13; i++)
             {
                 if(p[tableIndex].getNumber() == num[i])
                 {
                     pomBroj = i;
                 }
             }
-            infoSveKarte("Prije detetectTabC");
+            // ode je problem neki sa kartama na stolu
+            // kad dode do ode, iz nekog razloga se u nizu karta sveKarte, pic postavi na 0 :/
             sveKarte[pomVrsta+pomBroj].setCard(table[tableIndex]);
-            infoSveKarte("Poslije detetectTabC");
 
         }
     }

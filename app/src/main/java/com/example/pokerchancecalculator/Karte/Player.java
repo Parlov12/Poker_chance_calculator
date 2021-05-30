@@ -11,7 +11,6 @@ public class Player {
     Card_model empty_card = new Card_model();
 
 
-
     public Player()
     {
 
