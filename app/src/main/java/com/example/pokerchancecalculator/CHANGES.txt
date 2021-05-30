@@ -6,7 +6,8 @@
     -> odabrana karta se vise ne moze odabrat // ne radi jos, neki je problem s kartama na stolu, moram to jos rjesit
     -> 10 zamijenjena u "T"
 
-
+- 15+1th commit
+    -> odabrana karta se vise ne moze odabrat - radi sada
 
 
 // MATE
