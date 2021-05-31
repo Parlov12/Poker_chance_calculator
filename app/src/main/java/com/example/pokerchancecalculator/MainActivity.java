@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 String[] konacan_unos = {"", "", "", "", "", "", "", "", "", ""};
                 // prvo kupi karte sa boards i sprema ih u prvi clan niza konacan_unos
                 for (int i = 0; i < table.length; i++) {
-                    if (table[i].getNumber() != null) {
+                    if (table[i].getNumber() != "null") {
                         // ovdi spaja number ( npr. J ) i type ( npr. h - hearts) u jedinstveni niz karata na boardu
                         konacan_unos[0] = konacan_unos[0] + table[i].getNumber() + table[i].getType();
                         // npr. konacan_unos[0] = "JhJsJd"
@@ -1075,7 +1075,7 @@ public class MainActivity extends AppCompatActivity {
             players[i].sysOut();
         }
         for (i = 0; i < 5; i++) {
-            System.out.println(String.format("%d. table card -> %s %s", i + 1, table[i].getType(), table[i].getNumber()));
+            System.out.println(String.format("%d. table card -> %s %s", i + 1, table[i].getNumber(), table[i].getType()));
         }
     }
 
@@ -1182,8 +1182,7 @@ public class MainActivity extends AppCompatActivity {
                     pomBroj = i;
                 }
             }
-            // ode je problem neki sa kartama na stolu
-            // kad dode do ode, iz nekog razloga se u nizu karta sveKarte, pic postavi na 0 :/
+
             sveKarte[pomVrsta+pomBroj].setCard(table[tableIndex]);
 
         }
