@@ -27,6 +27,7 @@ import com.example.pokerchancecalculator.Algoritam.TestConsole;
 import com.example.pokerchancecalculator.Karte.Card_model;
 import com.example.pokerchancecalculator.Karte.Cards;
 import com.example.pokerchancecalculator.Karte.Player;
+import com.example.pokerchancecalculator.AlgoritamDva.useexample.Example;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     //definira si varijable -> objekt klase TestConsole i array String koji će sadržavat ruke svih igraća i opcionalno ploču
     TestConsole c = null;
+    Example e = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -210,10 +212,6 @@ public class MainActivity extends AppCompatActivity {
                         testConsole[t] = konacan_unos[i+1];
                         // dodaj odgovarajući textView u array textView-ova koji će se slat
                         textViewsConsole[tv] = textViews[i];
-                        System.out.println("Main ac");
-                        System.out.println(tv);
-                        System.out.println(i);
-                        System.out.println("Main ac - kraj");
                         tv++;
                         t++;
                     }
