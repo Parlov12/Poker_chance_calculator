@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     //definira si varijable -> objekt klase TestConsole i array String koji će sadržavat ruke svih igraća i opcionalno ploču
     TestConsole c = null;
-    Example e = null;
+    Example e = new Example();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             table[i] = new Card_model();
         }
 
-
+        e.start();
         // test
         Intent startTest = new Intent(MainActivity.this, Test.class);
         startTest.putExtra("key", 0); //Optional parameters
