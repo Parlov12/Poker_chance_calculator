@@ -1,4 +1,4 @@
-package com.example.pokerchancecalculator;
+package com.example.pokerchancecalculator.Custom;
 
 import android.content.Context;
 import android.util.AttributeSet;

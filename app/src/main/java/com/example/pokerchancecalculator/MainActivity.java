@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     int i = 0;
     Drawable draw;
     int no_card = R.drawable.no_card;
+    int backside = R.drawable.backside;
     int vrsta = 0;
     int num = 0;
     int igrac = 0;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     // pri odabiru karte, odabrana karta unutar ovog niza bit ce
     // postavljena na type = "null", number = "null"
     public Card_model[] sveKarte = new Card_model[52];
+    public boolean checkClear = false;
 
 
     //definira si varijable -> objekt klase TestConsole i array String koji će sadržavat ruke svih igraća i opcionalno ploču
@@ -84,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         Intent startTest = new Intent(MainActivity.this, Test.class);
         startTest.putExtra("key", 0); //Optional parameters
 
-        Button testniButton = findViewById(R.id.test);
+        //Button testniButton = findViewById(R.id.test);
         //kraj test
 
         Log.d(TAG, "onCreate created");
@@ -152,81 +154,6 @@ public class MainActivity extends AppCompatActivity {
         textViews[8] = findViewById(R.id.win_stats9);
 
 
-
-
-        // doda san sve textView-ove u niz textView-ov
-
-
-        testniButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int hands = 0;
-                String[] konacan_unos = {"", "", "", "", "", "", "", "", "", ""};
-                // prvo kupi karte sa boards i sprema ih u prvi clan niza konacan_unos
-                for (int i = 0; i < table.length; i++) {
-                    if (table[i].getNumber() != "null") {
-                        // ovdi spaja number ( npr. J ) i type ( npr. h - hearts) u jedinstveni niz karata na boardu
-                        konacan_unos[0] = konacan_unos[0] + table[i].getNumber() + table[i].getType();
-                        // npr. konacan_unos[0] = "JhJsJd"
-                    }
-                }
-
-                // ovdje vrtiš kroz svih 9 igrača i provjeravaš sadrže li obe njegove karte nekakvu vrijednost
-                // ako DA, onda su pogodne za slanje na računanje u c.test()
-                for (int i = 0; i < players.length; i++) {
-                    // ukoliko je korisnik odabra obe karte
-
-                    // PROBLEM JE ŠTA STALNO ULAZI U OVI IF I KAD NISU ODABRANE KARTE
-                    if (players[i].cards[0].getNumber() != "null" && players[i].cards[1].getNumber() != "null") {
-                        // ovdi spaja number ( npr. J ) i type ( npr. h - hearts) dva puta u jedinstvenu ruku igrača
-                        konacan_unos[i + 1] = "" + players[i].cards[0].getNumber() + players[i].cards[0].getType() + players[i].cards[1].getNumber() + players[i].cards[1].getType();
-                        // hands broji broj igraca koji su odabrali obje karte
-                        hands = hands + 1;
-                    }
-                }
-
-                // broj textView-ova korespondira broju igraca sa obje karte odabrane
-                TextView[] textViewsConsole = new TextView[hands];
-                System.out.println(hands);
-                int t = 0;
-
-                //ovdi ćemo sad sastavljat argumente za slanje u c.test(), trebamo formatirat string za slanje i testViews
-                String[] testConsole;
-
-                // ako postoji nesto na boardu, u testconsole salji -b i board npr. -b JhJsJd
-                if (konacan_unos[0] != "") {
-                    testConsole = new String[hands + 2];
-                    testConsole[0] = "-b";
-                    testConsole[1] = konacan_unos[0];
-                    t = 2;
-                } else {
-                    testConsole = new String[hands];
-                }
-
-                // ova varijabla broji dodane textView-ove
-                int tv = 0;
-                // ova petlja ide po konacnom unosu i gleda koji igraci imaju ruku, ovisno o tome ćemo slagat textViewove u niz
-                // tj oni igraci koji imaju ruku, njihovi textViewovi idu u testConsole
-                for (int i = 0; i < konacan_unos.length-1; i++) {
-                    if(konacan_unos[i+1] != ""){
-                        testConsole[t] = konacan_unos[i+1];
-                        // dodaj odgovarajući textView u array textView-ova koji će se slat
-                        textViewsConsole[tv] = textViews[i];
-                        System.out.println("Main ac");
-                        System.out.println(tv);
-                        System.out.println(i);
-                        System.out.println("Main ac - kraj");
-                        tv++;
-                        t++;
-                    }
-                }
-                try {
-                    c.test(testConsole, textViewsConsole);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
 
         //LIST KARATA SVIH MOGUCIH IGRACA(MAX 9)
         List<ImageView> playerCards = new ArrayList<ImageView>();
@@ -306,6 +233,37 @@ public class MainActivity extends AppCompatActivity {
 
         // postavljanje na default - pik karte
         spades.setForeground(foreground);
+
+        TextView range = findViewById(R.id.bannerAd);
+        range.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startTest = new Intent(MainActivity.this, Range.class);
+                startTest.putExtra("key", 1); //Optional parameters
+                startActivity(startTest);
+            }
+        });
+
+        Button clear = findViewById(R.id.clear_button);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkClear == true) {
+                    for (i = 0; i < 9; i++) {
+                        players[i].cards[0].setCard("null", "null", no_card);
+                        players[i].cards[1].setCard("null", "null", no_card);
+                        playerCards.get(i).setImageResource(backside);
+                    }
+                    for (i = 0; i < 5; i++) {
+                        table[i].setCard("null", "null", no_card);
+                        tableCards.get(i).setImageResource(backside);
+                    }
+                    for (i = 0; i < 52; i++) {
+                        sveKarte[i].setCard(karte.all_cards.get(i).getType(), karte.all_cards.get(i).getNumber(), karte.all_cards.get(i).getPic());
+                    }
+                }
+            }
+        });
 
 
         // CLICK LISTENERS
@@ -632,6 +590,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 checkTable = false;
                 info();
+
+                dialog_cards_view.setVisibility(View.INVISIBLE);
+                testniButtonFun(textViews);
+
             }
         });
         dialogCards.get(1).setOnClickListener(new View.OnClickListener() {
@@ -653,6 +615,8 @@ public class MainActivity extends AppCompatActivity {
 }
                 checkTable = false;
                 info();
+                dialog_cards_view.setVisibility(View.INVISIBLE);
+                testniButtonFun(textViews);
             }
         });
         dialogCards.get(2).setOnClickListener(new View.OnClickListener() {
@@ -675,6 +639,9 @@ public class MainActivity extends AppCompatActivity {
 }
                 checkTable = false;
                 info();
+                dialog_cards_view.setVisibility(View.INVISIBLE);
+                testniButtonFun(textViews);
+
             }
         });
         dialogCards.get(3).setOnClickListener(new View.OnClickListener() {
@@ -696,6 +663,9 @@ public class MainActivity extends AppCompatActivity {
 }
                 checkTable = false;
                 info();
+                dialog_cards_view.setVisibility(View.INVISIBLE);
+                testniButtonFun(textViews);
+
             }
         });
         dialogCards.get(4).setOnClickListener(new View.OnClickListener() {
@@ -717,6 +687,10 @@ public class MainActivity extends AppCompatActivity {
 }
                 checkTable = false;
                 info();
+
+                dialog_cards_view.setVisibility(View.INVISIBLE);
+                testniButtonFun(textViews);
+
             }
         });
         dialogCards.get(5).setOnClickListener(new View.OnClickListener() {
@@ -738,6 +712,10 @@ public class MainActivity extends AppCompatActivity {
 }
                 checkTable = false;
                 info();
+
+                dialog_cards_view.setVisibility(View.INVISIBLE);
+                testniButtonFun(textViews);
+
             }
         });
         dialogCards.get(6).setOnClickListener(new View.OnClickListener() {
@@ -759,6 +737,10 @@ public class MainActivity extends AppCompatActivity {
 }
                 checkTable = false;
                 info();
+
+                dialog_cards_view.setVisibility(View.INVISIBLE);
+                testniButtonFun(textViews);
+
             }
         });
         dialogCards.get(7).setOnClickListener(new View.OnClickListener() {
@@ -780,6 +762,10 @@ public class MainActivity extends AppCompatActivity {
 }
                 checkTable = false;
                 info();
+
+                dialog_cards_view.setVisibility(View.INVISIBLE);
+                testniButtonFun(textViews);
+
             }
         });
         dialogCards.get(8).setOnClickListener(new View.OnClickListener() {
@@ -801,6 +787,10 @@ public class MainActivity extends AppCompatActivity {
 }
                 checkTable = false;
                 info();
+
+                dialog_cards_view.setVisibility(View.INVISIBLE);
+                testniButtonFun(textViews);
+
             }
         });
         dialogCards.get(9).setOnClickListener(new View.OnClickListener() {
@@ -822,6 +812,10 @@ public class MainActivity extends AppCompatActivity {
 }
                 checkTable = false;
                 info();
+
+                dialog_cards_view.setVisibility(View.INVISIBLE);
+                testniButtonFun(textViews);
+
             }
         });
         dialogCards.get(10).setOnClickListener(new View.OnClickListener() {
@@ -843,6 +837,10 @@ public class MainActivity extends AppCompatActivity {
 }
                 checkTable = false;
                 info();
+
+                dialog_cards_view.setVisibility(View.INVISIBLE);
+                testniButtonFun(textViews);
+
             }
         });
         dialogCards.get(11).setOnClickListener(new View.OnClickListener() {
@@ -865,6 +863,10 @@ public class MainActivity extends AppCompatActivity {
 }
                 checkTable = false;
                 info();
+
+                dialog_cards_view.setVisibility(View.INVISIBLE);
+                testniButtonFun(textViews);
+
             }
         });
         dialogCards.get(12).setOnClickListener(new View.OnClickListener() {
@@ -887,29 +889,16 @@ public class MainActivity extends AppCompatActivity {
                     addSelectedCardToPlayer(vrsta, num, igrac, karta, players, karte.all_cards, dialogCards);
                 } else if (checkTable) {
                     addSelectedCardToTable(vrsta, num, tableInd, karte.all_cards, dialogCards);
-}
+                }
                 checkTable = false;
                 info();
-                mate();
+
+                dialog_cards_view.setVisibility(View.INVISIBLE);
+                testniButtonFun(textViews);
+
             }
         });
 
-
-/*
-        playerCards.get(17).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openDialog(17, dialog_cards_view, playerCards.get(17));
-                igrac = 8;
-                karta = 1;
-
-                setSpades(dialogCards);
-                spades.setForeground(foreground);
-                hearts.setForeground(foreground_null);
-                clubs.setForeground(foreground_null);
-                diamonds.setForeground(foreground_null);
-            }
-        });  */
         tableCards.get(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -985,6 +974,8 @@ public class MainActivity extends AppCompatActivity {
         dialog.setVisibility(View.VISIBLE);
         saveCurrentCard(l);
         currentImageView = l;
+        Button clearB = findViewById(R.id.clear_button);
+        clearB.setVisibility(View.INVISIBLE);
     }
 
     public void closeDialog(LinearLayout dialog, ImageView m, List<ImageView> lista, List<ImageView> lista2) {
@@ -1001,6 +992,9 @@ public class MainActivity extends AppCompatActivity {
             toast = Toast.makeText(getApplicationContext(), "closeDialog ERROR!\ncurrentImageView out of range!", Toast.LENGTH_SHORT);
             toast.show();
         }
+        Button clearB = findViewById(R.id.clear_button);
+        clearB.setVisibility(View.VISIBLE);
+
     }
 
 
@@ -1195,6 +1189,75 @@ public class MainActivity extends AppCompatActivity {
         {
             Log.d("SVEKARTE", String.format("%s %d. karta - > type = %s number = %s pic = %d",a, i+1,sveKarte[i].getType(), sveKarte[i].getNumber(), sveKarte[i].getPic()));
 
+        }
+    }
+
+    public void testniButtonFun(TextView[] textViews)
+    {
+        int hands = 0;
+        String[] konacan_unos = {"", "", "", "", "", "", "", "", "", ""};
+        // prvo kupi karte sa boards i sprema ih u prvi clan niza konacan_unos
+        for (int i = 0; i < table.length; i++) {
+            if (table[i].getNumber() != "null") {
+                // ovdi spaja number ( npr. J ) i type ( npr. h - hearts) u jedinstveni niz karata na boardu
+                konacan_unos[0] = konacan_unos[0] + table[i].getNumber() + table[i].getType();
+                // npr. konacan_unos[0] = "JhJsJd"
+            }
+        }
+
+        // ovdje vrtiš kroz svih 9 igrača i provjeravaš sadrže li obe njegove karte nekakvu vrijednost
+        // ako DA, onda su pogodne za slanje na računanje u c.test()
+        for (int i = 0; i < players.length; i++) {
+            // ukoliko je korisnik odabra obe karte
+
+            // PROBLEM JE ŠTA STALNO ULAZI U OVI IF I KAD NISU ODABRANE KARTE
+            if (players[i].cards[0].getNumber() != "null" && players[i].cards[1].getNumber() != "null") {
+                // ovdi spaja number ( npr. J ) i type ( npr. h - hearts) dva puta u jedinstvenu ruku igrača
+                konacan_unos[i + 1] = "" + players[i].cards[0].getNumber() + players[i].cards[0].getType() + players[i].cards[1].getNumber() + players[i].cards[1].getType();
+                // hands broji broj igraca koji su odabrali obje karte
+                hands = hands + 1;
+            }
+        }
+
+        // broj textView-ova korespondira broju igraca sa obje karte odabrane
+        TextView[] textViewsConsole = new TextView[hands];
+        System.out.println(hands);
+        int t = 0;
+
+        //ovdi ćemo sad sastavljat argumente za slanje u c.test(), trebamo formatirat string za slanje i testViews
+        String[] testConsole;
+
+        // ako postoji nesto na boardu, u testconsole salji -b i board npr. -b JhJsJd
+        if (konacan_unos[0] != "") {
+            testConsole = new String[hands + 2];
+            testConsole[0] = "-b";
+            testConsole[1] = konacan_unos[0];
+            t = 2;
+        } else {
+            testConsole = new String[hands];
+        }
+
+        // ova varijabla broji dodane textView-ove
+        int tv = 0;
+        // ova petlja ide po konacnom unosu i gleda koji igraci imaju ruku, ovisno o tome ćemo slagat textViewove u niz
+        // tj oni igraci koji imaju ruku, njihovi textViewovi idu u testConsole
+        for (int i = 0; i < konacan_unos.length-1; i++) {
+            if(konacan_unos[i+1] != ""){
+                testConsole[t] = konacan_unos[i+1];
+                // dodaj odgovarajući textView u array textView-ova koji će se slat
+                textViewsConsole[tv] = textViews[i];
+                System.out.println("Main ac");
+                System.out.println(tv);
+                System.out.println(i);
+                System.out.println("Main ac - kraj");
+                tv++;
+                t++;
+            }
+        }
+        try {
+            c.test(testConsole, textViewsConsole);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

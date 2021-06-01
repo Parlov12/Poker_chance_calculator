@@ -36,6 +36,12 @@ public class Card_model {
         this.pic = slika;
     }
 
+    public void setCard(String vrsta, String broj)
+    {
+        this.type = vrsta;
+        this.number = broj;
+    }
+
     public void setCard(Card_model a)
     {
         this.type = a.type;
